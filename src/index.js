@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom';
+import  App from './App';
+import "antd/dist/antd.css";
 
 import {mainRoutes} from "./routes";
 ReactDOM.render(
     <Router>
         <Switch>
+            <Route path='/bookmanager' render={routeProps=> <App {...routeProps}/>} />
             {mainRoutes.map(route=>{
                 return <Route key={route.path} {...route}></Route>
             })}
