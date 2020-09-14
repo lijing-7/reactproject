@@ -3,9 +3,10 @@ import './App.css';
 import {HashRouter as Router,Route,Switch,Redirect} from 'react-router-dom';
 import {pageRoutes} from './routes';
 import Frame from "./component/Frame/index";
+import {isLogin} from './util/auth'
 function App() {
   return (
-    <Frame className="App">
+    isLogin()?<Frame className="App">
       <Router>
         <Switch>
           {pageRoutes.map(route=>{
@@ -15,10 +16,11 @@ function App() {
                            }
                            }></Route>)
           })}
+          <Redirect to={pageRoutes[0].path} from="/bookmanager" />
           <Redirect to='/404' />
         </Switch>
       </Router>
-    </Frame>
+    </Frame>:<Redirect  to="/login"/>
   );
 }
 
