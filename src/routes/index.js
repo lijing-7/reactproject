@@ -12,6 +12,6 @@ export const mainRoutes=[
 export const pageRoutes=[
     {path: '/bookmanager/home', component: Home,title:'主页',isShow:true,Icon:"home"},
     {path: '/bookmanager/booklist', component: Booklist,title:'书籍管理',isShow:true,Icon:"book"},
-    {path: '/bookmanager/booklist/edit/:id', component: Bookedit},
+    {path: '/bookmanager/edit/:id?', component: Bookedit},
     {path: '/bookmanager/user', component: Booklist, exact: true,title:'用户管理',isShow:true,Icon:"user"},
 ]

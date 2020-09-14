@@ -1,14 +1,14 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import timg from './timg.jpg';
 import {pageRoutes} from '../../routes/index';
-import {withRouter} from 'react-router-dom';
+const { Header, Content, Sider } = Layout;
 
 const routes = pageRoutes.filter(route=>route.isShow)
 
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
-function Frame(props) {
+
+function Index(props) {
     return (
     <Layout>
         <Header className="header">
@@ -26,7 +26,7 @@ function Frame(props) {
                     style={{ height: '100%', borderRight: 0 }}
                 >
                     {routes.map(route=>{
-                        return <Menu.Item key={route.path} onClick={p=>props.history.push(p.key)}>
+                        return <Menu.Item key={route.path} onClick={p=> props.history.push(p.key)}>
                                <Icon type={route.Icon}/>
                                     {route.title}
                                 </Menu.Item>
@@ -34,11 +34,6 @@ function Frame(props) {
                 </Menu>
             </Sider>
             <Layout style={{ padding: '0 24px 24px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                    {/*<Breadcrumb.Item>Home</Breadcrumb.Item>*/}
-                    {/*<Breadcrumb.Item>List</Breadcrumb.Item>*/}
-                    {/*<Breadcrumb.Item>App</Breadcrumb.Item>*/}
-                </Breadcrumb>
                 <Content
                     style={{
                         background: '#fff',
@@ -57,4 +52,4 @@ function Frame(props) {
     );
 }
 
-export default withRouter(Frame);
+export default withRouter(Index);

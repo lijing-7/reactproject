@@ -1,6 +1,6 @@
-import React from 'react';
-import {Card,Table,Button,Popconfirm} from "antd";
 
+import React, {Component} from 'react';
+import {Card,Table,Button,Popconfirm} from "antd";
 const datasource = [
     {
         key:1 ,
@@ -18,7 +18,9 @@ const datasource = [
         author:'老舍'
     }
 ]
-function Booklist (props) {
+
+
+function Booklist(props) {
         const columns = [
             {
                 title:'编号',
@@ -52,11 +54,16 @@ function Booklist (props) {
                 }
             }
         ]
+
         return (
             <div>
-               <Card title="书籍列表" extra={<Button type="primary" size="small" onClick={()=> props.history.push('/bookmanager/booklist/edit')}>新增</Button>}>
+                <Card title="书籍列表"
+                      extra={
+                          <Button type="primary" size="small" onClick={()=> {return  props.history.push('/bookmanager/edit')}
+                          }>新增</Button>}
+                      >
                     <Table columns={columns} bordered  dataSource={datasource}></Table>
-               </Card>
+                </Card>
             </div>
         );
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom';
+import {HashRouter as Router,Route,Switch,Redirect} from 'react-router-dom';
 import {pageRoutes} from './routes';
-import Frame from "./component/Frame";
+import Frame from "./component/Frame/index";
 function App() {
   return (
     <Frame className="App">
