@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
+import SiderLeft from '../component/MenuSider'
 
 class Home extends Component {
     render() {
         return (
             <div>
-                <h1>主页</h1>
+                <SiderLeft></SiderLeft>
+                <div className="homeclassright">
+                    内容
+                </div>
+
             </div>
         );
     }

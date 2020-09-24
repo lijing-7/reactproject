@@ -12,7 +12,7 @@ const routes = pageRoutes.filter(route=>route.isShow)
 function Index(props) {
     const menu = (
         <Menu onClick={(e)=>{
-            if (e.key=='logout'){
+            if (e.key==='logout'){
                 cleartoken();
                 props.history.push('/login');
             }else {
@@ -55,7 +55,7 @@ function Index(props) {
                     })}
                 </Menu>
             </Sider>
-            <Layout style={{ padding: '0 24px 24px' }}>
+            <Layout style={{ padding: '0 24px 24px' ,marginTop:'20px'}}>
                 <Content
                     style={{
                         background: '#fff',
